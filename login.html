@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+
+    <body>
+
+        <nav class="navbar bg-white py-4">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="brand-and-toggler">
+                        <a href="index.html" class="navbar-brand">
+                            <img src="assets/images/curriculum-vitae.png" alt="" class="navbar-brand-icon">
+                            <span class="navbar-brand-text">Resume <span>Builder</span></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav">
+                    <a class="nav-link active" href="login.html">Login</a>
+                    <a class="nav-link btn btn-secondary rounded py-2" href="signup.html">Signup</a>
+                </div>
+            </div>
+            </div>
+        </nav>
+
+        <div class="section-one">
+            <div class="container">
+                <div class="login">
+                    <form action="/login" method="post">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <div id="error-message"></div>
+                    <p>Don't have an account? <a href="signup.html">signup</a></p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer bg-dark">
+            <div class="footer-content text-center">
+                <p class="fs-17">Crafting professional futures seamlessly - <span>Resume Builder</span></p>
+            </div>
+        </footer>
+        <script>
+            const errorMessage = new URLSearchParams(window.location.search).get('error');
+            if (errorMessage) {
+                document.getElementById('error-message').innerHTML = errorMessage;
+            }
+        </script>
+    </body>
+
+</html>
